@@ -1,1 +1,44 @@
+# Compiled Object files and Libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Intermediate Build Files
+*.d
+*.dep
+*.gch
+*.pch
 build/
+bin/
+Debug/
+Release/
+
+# IDE-specific files
+.vs/
+.idea/
+CMakeCache.txt
+cmake-build-*/
+ipch/
+*.user
+*.suo
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+
+# Log files and Temporary files
+*.log
+*.tmp
+*~
