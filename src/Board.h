@@ -3,8 +3,7 @@
 #include <vector>
 #include <memory>
 
-#include "Piece.h"
-#include "Rook.h"
+class Piece;
 
 using PiecePtr = std::unique_ptr<Piece>;
 
@@ -13,7 +12,7 @@ private:
     std::vector<std::vector<PiecePtr>> chessBoard;
 
 public:
-    Board();    
+    Board();
 
     static bool isValidCoords(int row, int col);
 

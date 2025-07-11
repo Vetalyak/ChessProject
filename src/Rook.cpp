@@ -12,6 +12,7 @@ bool Rook::isValidMove(int newRow, int newCol, const Board& board) const {
         return false;
     }
 
+    // 3. Check self beating
     Piece* target = board.getPieceAt(newRow, newCol);
     if (target != nullptr && target->getColor() == this->color) {
         return false;
