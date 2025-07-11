@@ -7,10 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(Chess 
     src/main.cpp
-    src/Piece.h
     src/Piece.cpp
-    src/Rook.h
+    src/Pawn.cpp
     src/Rook.cpp
-    src/Board.h
+    src/Knight.cpp
+    src/Bishop.cpp
+    src/Queen.cpp
+    src/King.cpp
     src/Board.cpp
 )
+
+target_include_directories(Chess PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)

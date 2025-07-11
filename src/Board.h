@@ -16,7 +16,7 @@ public:
 
     static bool isValidCoords(int row, int col);
 
-    bool hasPieceOnPath(int row, int col, int newRow, int newCol) const;
+    bool hasPieceOnPath(int startRow, int startCol, int endRow, int endCol) const;
     Piece* getPieceAt(int row, int col) const;
 
     void placePiece(PiecePtr piece, int row, int col);
