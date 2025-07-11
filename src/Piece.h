@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Board.h"
+
 enum class PieceColor { WHITE, BLACK};
 enum class PieceType { PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING };
 
@@ -11,10 +13,10 @@ protected:
 	int col;
 
 public:
-	Piece();
+	Piece(int row, int col, PieceType type, PieceColor color);
 	virtual ~Piece() = default;
 
-	virtual bool isValidMoove(int newRow, int newCol, const int& board) const = 0;
+	virtual bool isValidMove(int newRow, int newCol, const Board& board) const = 0;
 
 	PieceColor getColor() const { return color; }
 	PieceType getType() const { return type; }

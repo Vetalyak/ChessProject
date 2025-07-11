@@ -25,6 +25,7 @@ Release/
 # IDE-specific files
 .vs/
 .idea/
+.vscode/
 CMakeCache.txt
 cmake-build-*/
 ipch/
