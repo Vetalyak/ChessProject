@@ -13,12 +13,12 @@ private:
 
 public:
     Board();
-
+    void setUpDefaultPosition();
     static bool isValidCoords(int row, int col);
 
     bool hasPieceOnPath(int startRow, int startCol, int endRow, int endCol) const;
     Piece* getPieceAt(int row, int col) const;
 
-    void placePiece(PiecePtr piece, int row, int col);
+    void placePiece(PiecePtr piece);
 
 };
