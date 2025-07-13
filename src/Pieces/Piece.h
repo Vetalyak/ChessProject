@@ -18,6 +18,7 @@ public:
 
 	virtual bool isValidMove(int newRow, int newCol, const Board& board) const;
 
+	virtual char getSymbol() const = 0;
 	PieceColor getColor() const { return color; }
 	PieceType getType() const { return type; }
 	int getRow() const { return row; }

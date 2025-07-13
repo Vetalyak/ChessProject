@@ -13,3 +13,5 @@ bool Knight::isValidMove(int newRow, int newCol, const Board &board) const {
     }
     return true;
 }
+
+char Knight::getSymbol() const { return color == PieceColor::WHITE ? 'N' : 'n'; }

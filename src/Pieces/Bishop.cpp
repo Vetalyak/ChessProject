@@ -17,3 +17,5 @@ bool Bishop::isValidMove(int newRow, int newCol, const Board &board) const {
     }
     return true;
 }
+
+char Bishop::getSymbol() const { return color == PieceColor::WHITE ? 'B' : 'b'; }

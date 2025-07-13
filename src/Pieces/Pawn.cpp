@@ -6,3 +6,5 @@ bool Pawn::isValidMove(int newRow, int newCol, const Board &board) const {
     }
     return true;
 }
+
+char Pawn::getSymbol() const { return color == PieceColor::WHITE ? 'P' : 'p'; }

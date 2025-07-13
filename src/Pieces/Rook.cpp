@@ -14,3 +14,5 @@ bool Rook::isValidMove(int newRow, int newCol, const Board& board) const {
     }
     return true;
 }
+
+char Rook::getSymbol() const { return color == PieceColor::WHITE ? 'R' : 'r'; }

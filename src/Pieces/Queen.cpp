@@ -17,3 +17,5 @@ bool Queen::isValidMove(int newRow, int newCol, const Board &board) const {
     }
     return true;
 }
+
+char Queen::getSymbol() const { return color == PieceColor::WHITE ? 'Q' : 'q'; }

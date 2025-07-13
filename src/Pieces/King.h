@@ -9,4 +9,5 @@ public:
     bool isValidMove(int newRow, int newCol, const Board& board) const override;
 
     bool isChecked(const Board& board);
+    char getSymbol() const override;
 };

@@ -12,3 +12,5 @@ bool King::isChecked(const Board &board)
 {
     return true;
 }
+
+char King::getSymbol() const { return color == PieceColor::WHITE ? 'K' : 'k'; }
