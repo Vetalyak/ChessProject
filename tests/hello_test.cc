@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
 
-#include "Board.h"
+#include "board.h"
 
-#include "Pieces/Piece.h"
-#include "Pieces/Rook.h"
-#include "Pieces/Knight.h"
-#include "Pieces/Bishop.h"
-#include "Pieces/Queen.h"
-#include "Pieces/King.h"
-#include "Pieces/Pawn.h"
+#include "pieces/piece.h"
+#include "pieces/rook.h"
+#include "pieces/knight.h"
+#include "pieces/bishop.h"
+#include "pieces/queen.h"
+#include "pieces/king.h"
+#include "pieces/pawn.h"
 
 TEST(BoardTest, IsDefaultPosition) {
     Board board;
