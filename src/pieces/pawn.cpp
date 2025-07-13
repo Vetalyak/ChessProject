@@ -1,4 +1,4 @@
-#include "Pawn.h"
+#include "pawn.h"
 #include <cmath>
 
 bool Pawn::isValidMove(int newRow, int newCol, const Board &board) const {

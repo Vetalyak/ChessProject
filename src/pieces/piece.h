@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Board.h"
+#include "board.h"
 
 enum class PieceColor { WHITE, BLACK};
 enum class PieceType { PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING };

@@ -1,6 +1,6 @@
-#include "Renderer.h"
-#include "Board.h"
-#include "Pieces/Piece.h"
+#include "renderer.h"
+#include "board.h"
+#include "pieces/piece.h"
 #include <iostream>
 
 void ConsoleBoardRenderer::render(const Board& board) {

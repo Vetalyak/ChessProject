@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 
-#include "Board.h"
-#include "Pieces/Piece.h"
-#include "Renderer.h"
-#include "utilities/FEN.h"
+#include "board.h"
+#include "pieces/piece.h"
+#include "renderer.h"
+#include "utilities/fen.h"
 
 int main() {
 	std::cout << std::boolalpha << "Chess Program VERSION 0.0.1" << std::endl;

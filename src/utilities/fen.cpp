@@ -1,5 +1,6 @@
-#include "FEN.h"
-#include "PieceFactory.h"
+#include "fen.h"
+#include "piece_factory.h"
+#include "board.h"
 #include <cctype>
 #include <stdexcept>
 

@@ -1,4 +1,4 @@
-#include "PieceFactory.h"
+#include "piece_factory.h"
 #include <stdexcept>
 
 std::unique_ptr<Piece> PieceFactory::create(int row, int col, PieceType type, PieceColor color)

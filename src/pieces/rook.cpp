@@ -1,4 +1,4 @@
-#include "Rook.h"
+#include "rook.h"
 
 bool Rook::isValidMove(int newRow, int newCol, const Board& board) const {
     if (!Piece::isValidMove(newRow, newCol, board)) {

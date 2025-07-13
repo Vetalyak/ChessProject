@@ -1,15 +1,15 @@
 set(SOURCE_FILES 
-    Pieces/Piece.cpp
-    Pieces/Pawn.cpp
-    Pieces/Rook.cpp
-    Pieces/Knight.cpp
-    Pieces/Bishop.cpp
-    Pieces/Queen.cpp
-    Pieces/King.cpp
-    Board.cpp
-    ConsoleBoardRenderer.cpp
-    PieceFactory.cpp
-    utilities/FEN.cpp
+    pieces/piece.cpp
+    pieces/pawn.cpp
+    pieces/rook.cpp
+    pieces/knight.cpp
+    pieces/bishop.cpp
+    pieces/queen.cpp
+    pieces/king.cpp
+    board.cpp
+    console_board_renderer.cpp
+    piece_factory.cpp
+    utilities/fen.cpp
 )
 
 add_library(chess ${SOURCE_FILES})

@@ -1,4 +1,4 @@
-#include "Piece.h"
+#include "piece.h"
 
 Piece::Piece(int row, int col, PieceType type, PieceColor color) : row(row), col(col), type(type), color(color) {}
 

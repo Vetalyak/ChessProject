@@ -1,4 +1,4 @@
-#include "Knight.h"
+#include "knight.h"
 #include <cmath>
 
 bool Knight::isValidMove(int newRow, int newCol, const Board &board) const {

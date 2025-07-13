@@ -1,4 +1,4 @@
-#include "King.h"
+#include "king.h"
 
 bool King::isValidMove(int newRow, int newCol, const Board &board) const {
     if (!Piece::isValidMove(newRow, newCol, board)) {

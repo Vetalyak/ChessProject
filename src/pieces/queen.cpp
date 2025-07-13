@@ -1,14 +1,14 @@
-#include "Bishop.h"
+#include "queen.h"
 #include <cmath>
 
-bool Bishop::isValidMove(int newRow, int newCol, const Board &board) const {
+bool Queen::isValidMove(int newRow, int newCol, const Board &board) const {
     if (!Piece::isValidMove(newRow, newCol, board)) {
         return false;
     }
 
     int dx = abs(col - newCol);
     int dy = abs(row - newRow);
-    if (dx != dy) {
+    if ((dx != dy) && (row != newRow && col != newCol)) {
         return false;
     }
 
@@ -18,4 +18,4 @@ bool Bishop::isValidMove(int newRow, int newCol, const Board &board) const {
     return true;
 }
 
-char Bishop::getSymbol() const { return color == PieceColor::WHITE ? 'B' : 'b'; }
+char Queen::getSymbol() const { return color == PieceColor::WHITE ? 'Q' : 'q'; }

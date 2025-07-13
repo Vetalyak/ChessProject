@@ -1,5 +1,5 @@
-#include "Board.h"
-#include "PieceFactory.h"
+#include "board.h"
+#include "piece_factory.h"
 
 #include <cmath>
 
