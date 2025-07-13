@@ -2,12 +2,7 @@
 #include <cmath>
 
 bool Queen::isValidMove(int newRow, int newCol, const Board &board) const {
-    if (!Board::isValidCoords(newRow, newCol)) {
-        return false;
-    }
-
-    Piece* target = board.getPieceAt(newRow, newCol);
-    if (target != nullptr && target->getColor() == this->color) {
+    if (!Piece::isValidMove(newRow, newCol, board)) {
         return false;
     }
 

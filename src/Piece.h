@@ -18,7 +18,7 @@ public:
 	Piece(int row, int col, PieceType type, PieceColor color);
 	virtual ~Piece() = default;
 
-	virtual bool isValidMove(int newRow, int newCol, const Board& board) const = 0;
+	virtual bool isValidMove(int newRow, int newCol, const Board& board) const;
 
 	PieceColor getColor() const { return color; }
 	PieceType getType() const { return type; }
