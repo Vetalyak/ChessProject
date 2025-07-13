@@ -12,8 +12,6 @@ protected:
 	int row;
 	int col;
 
-	//bool checkMain
-
 public:
 	Piece(int row, int col, PieceType type, PieceColor color);
 	virtual ~Piece() = default;
