@@ -1,11 +1,5 @@
 #include "Board.h"
-#include "Pieces/Piece.h"
-#include "Pieces/Pawn.h"
-#include "Pieces/Rook.h"
-#include "Pieces/Knight.h"
-#include "Pieces/Bishop.h"
-#include "Pieces/Queen.h"
-#include "Pieces/King.h"
+#include "PieceFactory.h"
 
 #include <cmath>
 
@@ -18,30 +12,30 @@ Board::Board() {
 
 void Board::setUpDefaultPosition() {
     for (int i = 0; i < 8; ++i) {
-        placePiece(std::make_unique<Pawn>(1, i, PieceType::PAWN, PieceColor::WHITE));
-        placePiece(std::make_unique<Pawn>(6, i, PieceType::PAWN, PieceColor::BLACK));
+        placePiece(PieceFactory::create(1, i, PieceType::PAWN, PieceColor::WHITE));
+        placePiece(PieceFactory::create(6, i, PieceType::PAWN, PieceColor::BLACK));
     }
 
-    placePiece(std::make_unique<Rook>(0, 0, PieceType::ROOK, PieceColor::WHITE));
-    placePiece(std::make_unique<Rook>(0, 7, PieceType::ROOK, PieceColor::WHITE));
-    placePiece(std::make_unique<Rook>(7, 0, PieceType::ROOK, PieceColor::BLACK));
-    placePiece(std::make_unique<Rook>(7, 7, PieceType::ROOK, PieceColor::BLACK));
+    placePiece(PieceFactory::create(0, 7, PieceType::ROOK, PieceColor::WHITE));
+    placePiece(PieceFactory::create(0, 0, PieceType::ROOK, PieceColor::WHITE));
+    placePiece(PieceFactory::create(7, 0, PieceType::ROOK, PieceColor::BLACK));
+    placePiece(PieceFactory::create(7, 7, PieceType::ROOK, PieceColor::BLACK));
 
-    placePiece(std::make_unique<Knight>(0, 1, PieceType::KNIGHT, PieceColor::WHITE));
-    placePiece(std::make_unique<Knight>(0, 6, PieceType::KNIGHT, PieceColor::WHITE));
-    placePiece(std::make_unique<Knight>(7, 1, PieceType::KNIGHT, PieceColor::BLACK));
-    placePiece(std::make_unique<Knight>(7, 6, PieceType::KNIGHT, PieceColor::BLACK));
+    placePiece(PieceFactory::create(0, 1, PieceType::KNIGHT, PieceColor::WHITE));
+    placePiece(PieceFactory::create(0, 6, PieceType::KNIGHT, PieceColor::WHITE));
+    placePiece(PieceFactory::create(7, 1, PieceType::KNIGHT, PieceColor::BLACK));
+    placePiece(PieceFactory::create(7, 6, PieceType::KNIGHT, PieceColor::BLACK));
 
-    placePiece(std::make_unique<Bishop>(0, 2, PieceType::BISHOP, PieceColor::WHITE));
-    placePiece(std::make_unique<Bishop>(0, 5, PieceType::BISHOP, PieceColor::WHITE));
-    placePiece(std::make_unique<Bishop>(7, 2, PieceType::BISHOP, PieceColor::BLACK));
-    placePiece(std::make_unique<Bishop>(7, 5, PieceType::BISHOP, PieceColor::BLACK));
+    placePiece(PieceFactory::create(0, 2, PieceType::BISHOP, PieceColor::WHITE));
+    placePiece(PieceFactory::create(0, 5, PieceType::BISHOP, PieceColor::WHITE));
+    placePiece(PieceFactory::create(7, 2, PieceType::BISHOP, PieceColor::BLACK));
+    placePiece(PieceFactory::create(7, 5, PieceType::BISHOP, PieceColor::BLACK));
 
-    placePiece(std::make_unique<Queen>(0, 3, PieceType::QUEEN, PieceColor::WHITE));
-    placePiece(std::make_unique<Queen>(7, 3, PieceType::QUEEN, PieceColor::BLACK));
+    placePiece(PieceFactory::create(0, 3, PieceType::QUEEN, PieceColor::WHITE));
+    placePiece(PieceFactory::create(7, 3, PieceType::QUEEN, PieceColor::BLACK));
 
-    placePiece(std::make_unique<King>(0, 4, PieceType::KING, PieceColor::WHITE));
-    placePiece(std::make_unique<King>(7, 4, PieceType::KING, PieceColor::BLACK));
+    placePiece(PieceFactory::create(0, 4, PieceType::KING, PieceColor::WHITE));
+    placePiece(PieceFactory::create(7, 4, PieceType::KING, PieceColor::BLACK));
 }
 
 bool Board::isValidCoords(int row, int col) {
