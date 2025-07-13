@@ -7,6 +7,7 @@ set(SOURCE_FILES
     Pieces/Queen.cpp
     Pieces/King.cpp
     Board.cpp
+    ConsoleBoardRenderer.cpp
     PieceFactory.cpp
 )
 
