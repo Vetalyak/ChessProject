@@ -9,6 +9,7 @@ set(SOURCE_FILES
     Board.cpp
     ConsoleBoardRenderer.cpp
     PieceFactory.cpp
+    utilities/FEN.cpp
 )
 
 add_library(chess ${SOURCE_FILES})
