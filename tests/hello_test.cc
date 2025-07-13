@@ -58,3 +58,13 @@ TEST(PieceTest, IsValidRookMove) {
     EXPECT_TRUE(rock1->isValidMove(3, 1, board));
     EXPECT_TRUE(rock1->isValidMove(5, 3, board));
 }
+
+TEST(PieceTest, IsValidPawnMove) {
+    Board board;
+    board.setUpDefaultPosition();
+    Piece* pawn = board.getPieceAt(1, 6);
+    EXPECT_TRUE(pawn->isValidMove(2, 6, board));
+    EXPECT_TRUE(pawn->isValidMove(3, 6, board));
+    EXPECT_FALSE(pawn->isValidMove(2, 7, board));
+    EXPECT_FALSE(pawn->isValidMove(5, 1, board));
+}
