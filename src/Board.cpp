@@ -1,11 +1,11 @@
 #include "Board.h"
-#include "Piece.h"
-#include "Pawn.h"
-#include "Rook.h"
-#include "Knight.h"
-#include "Bishop.h"
-#include "Queen.h"
-#include "King.h"
+#include "Pieces/Piece.h"
+#include "Pieces/Pawn.h"
+#include "Pieces/Rook.h"
+#include "Pieces/Knight.h"
+#include "Pieces/Bishop.h"
+#include "Pieces/Queen.h"
+#include "Pieces/King.h"
 
 #include <cmath>
 

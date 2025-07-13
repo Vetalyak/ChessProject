@@ -7,3 +7,8 @@ bool King::isValidMove(int newRow, int newCol, const Board &board) const {
     
     return true;
 }
+
+bool King::isChecked(const Board &board)
+{
+    return true;
+}
