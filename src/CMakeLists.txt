@@ -10,6 +10,7 @@ set(SOURCE_FILES
     console_board_renderer.cpp
     piece_factory.cpp
     utilities/fen.cpp
+    utilities/coords.cpp
 )
 
 add_library(chess ${SOURCE_FILES})
