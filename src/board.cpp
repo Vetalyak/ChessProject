@@ -11,6 +11,38 @@ Board::Board() {
     }
 }
 
+Board::Board(const Board &other) {
+    chessBoard.resize(8);
+    for (int i = 0; i < 8; ++i) {
+        chessBoard[i].resize(8);
+    }
+
+    for (int row = 0; row < 8; ++row) {
+        for (int col = 0; col < 8; ++col) {
+            if (other.chessBoard[row][col]) {
+                chessBoard[row][col] = other.chessBoard[row][col]->clone();
+            }
+        }
+    }
+}
+
+Board& Board::operator=(const Board &other) {
+    if (this == &other) return *this;
+        for (auto& row : chessBoard) {
+            for (auto& cell : row) {
+                cell.reset();
+            }
+        }
+        for (int row = 0; row < 8; ++row) {
+            for (int col = 0; col < 8; ++col) {
+                if (other.chessBoard[row][col]) {
+                    chessBoard[row][col] = other.chessBoard[row][col]->clone();
+                }
+            }
+        }
+    return *this;
+}
+
 void Board::setUpDefaultPosition() {
     for (int i = 0; i < 8; ++i) {
         placePiece(PieceFactory::create(1, i, PieceType::PAWN, PieceColor::WHITE));
@@ -145,4 +177,12 @@ void Board::placePiece(PiecePtr piece) {
 void Board::removePieceAt(int row, int col) {
     if (!isValidCoords(row, col)) return;
     chessBoard[row][col] = nullptr;
+}
+
+void Board::clear() {
+    for (auto& row : chessBoard) {
+        for (auto& cell : row) {
+            cell.reset();
+        }
+    }
 }
