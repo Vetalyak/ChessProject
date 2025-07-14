@@ -12,5 +12,5 @@
 
 class PieceFactory {
 public:
-	static std::unique_ptr<Piece> create(int row, int col, PieceType type, PieceColor color);
+    static std::unique_ptr<Piece> create(int row, int col, PieceType type, PieceColor color);
 };

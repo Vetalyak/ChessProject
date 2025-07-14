@@ -7,10 +7,10 @@
 #include "utilities/fen.h"
 
 int main() {
-	std::cout << std::boolalpha << "Chess Program VERSION 0.0.1" << std::endl;
-	Board board;
-	FEN::applyPosition(board, "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-	ConsoleBoardRenderer renderer;
-	renderer.render(board);
-	return 0;
+    std::cout << std::boolalpha << "Chess Program VERSION 0.0.1" << std::endl;
+    Board board;
+    FEN::applyPosition(board, "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    ConsoleBoardRenderer renderer;
+    renderer.render(board);
+    return 0;
 }
