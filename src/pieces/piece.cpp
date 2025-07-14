@@ -15,10 +15,10 @@ bool Piece::isValidMove(int newRow, int newCol, const Board& board) const {
     if (!basicMoveCheks(newRow, newCol, board)) return false;
     if (!canMoveAccordingToRules(newRow, newCol, board)) return false;
 
-    // Board tempBoard = board;
-    // tempBoard.movePiece(row, col, newRow, newCol);
+    Board tempBoard = board;
+    tempBoard.movePiece(row, col, newRow, newCol);
 
-    return true;
+    return !tempBoard.isKingInCheck(color);
 }
 
 void Piece::setPosition(int newRow, int newCol) {

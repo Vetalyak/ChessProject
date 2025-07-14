@@ -6,6 +6,7 @@
 
 
 void FEN::applyPosition(Board &board, const std::string &fen) {
+    board.clear();
     int row = 7;
     int col = 0;
 

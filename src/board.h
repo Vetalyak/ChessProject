@@ -14,6 +14,9 @@ private:
 
 public:
     Board();
+    Board(const Board& other);
+    Board& operator=(const Board& other);
+
     void setUpDefaultPosition();
     static bool isValidCoords(int row, int col);
     void movePiece(int startRow, int startCol, int endRow, int endCol);
@@ -25,6 +28,5 @@ public:
     Piece* getPieceAt(int row, int col) const;
     void placePiece(PiecePtr piece);
     void removePieceAt(int row, int col);
-
-
+    void clear();
 };
