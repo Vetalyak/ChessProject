@@ -18,5 +18,14 @@ Coords stringToCoords(const std::string& notation) {
 }
 
 std::string coordsToString(const Coords& coords) {
-	return std::string();
+	int file = coords.first;
+	int rank = coords.second;
+	if (file < 0 || file > 7 || rank < 0 || rank > 7) {
+		throw std::invalid_argument("Coordinates out of board range");
+	}
+
+	char fileChar = 'a' + file;
+	char rankChar = '1' + rank;
+
+	return std::string(1, fileChar) + std::string(1, rankChar);
 }
