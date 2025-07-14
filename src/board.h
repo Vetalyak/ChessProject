@@ -4,6 +4,7 @@
 #include <memory>
 
 class Piece;
+enum class PieceColor;
 
 using PiecePtr = std::unique_ptr<Piece>;
 

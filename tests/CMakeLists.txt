@@ -11,7 +11,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 add_executable(chess_tests
-    hello_test.cc
+    board_tests.cc
 )
 
 target_link_libraries(chess_tests PRIVATE chess GTest::gtest GTest::gtest_main)

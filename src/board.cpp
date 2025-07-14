@@ -67,7 +67,7 @@ bool Board::isKingInCheck(PieceColor color) const {
 
     for (int row = 0; row < 8; ++row) {
         for (int col = 0; col < 8; ++col) {
-            const auto& piece = chessBoard[row][col];
+            const auto piece = getPieceAt(row, col);
             if (piece && piece->getColor() != color) {
                 if (piece->canMoveAccordingToRules(kingRow, kingCol, *this)) {
                     return true;
