@@ -1,21 +1,13 @@
 #include "bishop.h"
 #include <cmath>
 
-bool Bishop::isValidMove(int newRow, int newCol, const Board &board) const {
-    if (!Piece::isValidMove(newRow, newCol, board)) {
-        return false;
-    }
-
+bool Bishop::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const {
     int dx = abs(col - newCol);
     int dy = abs(row - newRow);
     if (dx != dy) {
         return false;
     }
-
-    if (board.hasPieceOnPath(row, col, newRow, newCol)) {
-        return false;
-    }
-    return true;
+    return !board.hasPieceOnPath(row, col, newRow, newCol);
 }
 
 char Bishop::getSymbol() const { return color == PieceColor::WHITE ? 'B' : 'b'; }

@@ -2,6 +2,7 @@
 #include "piece_factory.h"
 
 #include <cmath>
+#include <stdexcept>
 
 Board::Board() {
     chessBoard.resize(8);
@@ -42,7 +43,44 @@ bool Board::isValidCoords(int row, int col) {
     return row >= 0 && row <= 7 && col >= 0 && col <= 7;
 }
 
-bool Board::hasPieceOnPath(int startRow, int startCol, int endRow, int endCol) const {
+void Board::movePiece(int startRow, int startCol, int endRow, int endCol) {
+    
+}
+
+bool Board::isKingInCheck(PieceColor color) const {
+    int kingRow = -1;
+    int kingCol = -1;
+
+    for (int row = 0; row < 8; ++row) {
+        for (int col = 0; col < 8; ++col) {
+            const auto piece = getPieceAt(row, col);
+            if (piece && piece->getType() == PieceType::KING && piece->getColor() == color) {
+                kingRow = row;
+                kingCol = col;
+                break;
+            }
+        }
+    }
+
+    if (kingRow == -1 || kingCol == -1) 
+        throw std::runtime_error("King not found on the board!");
+
+    for (int row = 0; row < 8; ++row) {
+        for (int col = 0; col < 8; ++col) {
+            const auto& piece = chessBoard[row][col];
+            if (piece && piece->getColor() != color) {
+                if (piece->canMoveAccordingToRules(kingRow, kingCol, *this)) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+
+bool Board::hasPieceOnPath(int startRow, int startCol, int endRow, int endCol) const
+{
     int dx = abs(startCol - endCol);
     int dy = abs(startRow - endRow);
 
@@ -85,6 +123,10 @@ bool Board::hasPieceOnPath(int startRow, int startCol, int endRow, int endCol) c
     return false;
 }
 
+bool Board::isValidMove(const Piece *piece, int newRow, int newCol) const {
+    return piece->isValidMove(newRow, newCol, *this);
+}
+
 Piece* Board::getPieceAt(int row, int col) const {
     if (isValidCoords(row, col)) {
         return chessBoard[row][col].get();
@@ -98,4 +140,9 @@ void Board::placePiece(PiecePtr piece) {
     if (isValidCoords(row, col)) {
         chessBoard[row][col] = std::move(piece);
     }
+}
+
+void Board::removePieceAt(int row, int col) {
+    if (!isValidCoords(row, col)) return;
+    chessBoard[row][col] = nullptr;
 }

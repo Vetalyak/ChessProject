@@ -15,10 +15,15 @@ public:
     Board();
     void setUpDefaultPosition();
     static bool isValidCoords(int row, int col);
+    void movePiece(int startRow, int startCol, int endRow, int endCol);
 
+    bool isKingInCheck(PieceColor color) const;
     bool hasPieceOnPath(int startRow, int startCol, int endRow, int endCol) const;
-    Piece* getPieceAt(int row, int col) const;
+    bool isValidMove(const Piece* piece, int newRow, int newCol) const;
 
+    Piece* getPieceAt(int row, int col) const;
     void placePiece(PiecePtr piece);
+    void removePieceAt(int row, int col);
+
 
 };

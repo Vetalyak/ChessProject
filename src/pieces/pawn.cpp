@@ -1,10 +1,7 @@
 #include "pawn.h"
 #include <cmath>
 
-bool Pawn::isValidMove(int newRow, int newCol, const Board &board) const {
-    if (!Board::isValidCoords(newRow, newCol)) {
-        return false;
-    }
+bool Pawn::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const {
     int dir = (color == PieceColor::WHITE) ? 1 : -1;
     int dy = newRow - row;
     int dx = newCol - col;

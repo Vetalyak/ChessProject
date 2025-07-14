@@ -6,17 +6,12 @@ enum class PieceColor { WHITE, BLACK};
 enum class PieceType { PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING };
 
 class Piece {
-protected:
-    const PieceColor color;
-    const PieceType type;
-    int row;
-    int col;
-
 public:
     Piece(int row, int col, PieceType type, PieceColor color);
     virtual ~Piece() = default;
 
-    virtual bool isValidMove(int newRow, int newCol, const Board& board) const;
+    bool isValidMove(int newRow, int newCol, const Board& board) const;
+    virtual bool canMoveAccordingToRules(int newRow, int newCol, const Board& board) const = 0;
 
     virtual char getSymbol() const = 0;
     PieceColor getColor() const { return color; }
@@ -25,4 +20,12 @@ public:
     int getCol() const { return col; }
 
     void setPosition(int newRow, int newCol);
+    
+protected:
+    const PieceColor color;
+    const PieceType type;
+    int row;
+    int col;
+
+    bool basicMoveCheks(int newRow, int newCol, const Board& board) const;
 };
