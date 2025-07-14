@@ -10,6 +10,8 @@ public:
     Piece(int row, int col, PieceType type, PieceColor color);
     virtual ~Piece() = default;
 
+    virtual PiecePtr clone() const = 0;
+
     bool isValidMove(int newRow, int newCol, const Board& board) const;
     virtual bool canMoveAccordingToRules(int newRow, int newCol, const Board& board) const = 0;
 

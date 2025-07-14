@@ -1,7 +1,12 @@
 #include "knight.h"
 #include <cmath>
 
-bool Knight::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const {
+PiecePtr Knight::clone() const {
+    return std::make_unique<Knight>(*this);
+}
+
+bool Knight::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const
+{
     int dx = abs(newCol - col);
     int dy = abs(newRow - row);
     return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);

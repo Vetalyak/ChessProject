@@ -1,7 +1,12 @@
 #include "bishop.h"
 #include <cmath>
 
-bool Bishop::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const {
+PiecePtr Bishop::clone() const {
+    return std::make_unique<Bishop>(*this);;
+}
+
+bool Bishop::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const
+{
     int dx = abs(col - newCol);
     int dy = abs(row - newRow);
     if (dx != dy) {

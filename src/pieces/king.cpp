@@ -1,7 +1,12 @@
 #include "king.h"
 #include <cmath>
 
-bool King::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const {
+PiecePtr King::clone() const {
+    return std::make_unique<King>(*this);;
+}
+
+bool King::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const
+{
     int dx = abs(newCol - col);
     int dy = abs(newRow - row);
 

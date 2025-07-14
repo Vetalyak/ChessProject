@@ -1,7 +1,12 @@
 #include "pawn.h"
 #include <cmath>
 
-bool Pawn::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const {
+PiecePtr Pawn::clone() const {
+    return std::make_unique<Pawn>(*this);
+}
+
+bool Pawn::canMoveAccordingToRules(int newRow, int newCol, const Board &board) const
+{
     int dir = (color == PieceColor::WHITE) ? 1 : -1;
     int dy = newRow - row;
     int dx = newCol - col;

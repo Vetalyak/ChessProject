@@ -6,6 +6,8 @@ class Rook : public Piece {
 public:
     Rook(int row, int col, PieceType type, PieceColor color) : Piece(row, col, type, color) {}
 
+    PiecePtr clone() const override;
+
     bool canMoveAccordingToRules(int newRow, int newCol, const Board& board) const override;
 
     char getSymbol() const override;
